@@ -28,7 +28,7 @@ docker run --rm \\
   -v $CWD/SRPMS:/home/rpmbuilder/rpmbuild/SRPMS \\
   -v $CWD/SPECS:/home/rpmbuilder/rpmbuild/SPECS \\
   -v $CWD/SOURCES:/home/rpmbuilder/rpmbuild/SOURCES \\
-  ${DOCKER_RPMBUILD_EL6}-cpp11 \\
+  ${DOCKER_RPMBUILD_EL6}:cpp11 \\
   bash -c "source /opt/rh/devtoolset-2/enable && /bin/build-spec $BUILD_SPEC_ARGS /home/rpmbuilder/rpmbuild/SPECS/$PACKAGE.spec"
 
 exit $?'''
