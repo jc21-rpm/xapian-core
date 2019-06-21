@@ -23,7 +23,9 @@ pipeline {
     }
     stage('Sign') {
       steps {
-        rpmSign()
+        ansiColor('xterm') {
+          rpmSign()
+        }
       }
     }
     stage('Publish') {
