@@ -1,0 +1,7 @@
+{
+  "publish": {
+    "PACKAGE": "xapian-core",
+    "GH_USER": "jc21-rpm",
+    "VERSION": "1.4.11"
+  }
+}
