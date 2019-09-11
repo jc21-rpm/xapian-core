@@ -2,7 +2,7 @@
 
 Summary:       The Xapian Probabilistic Information Retrieval Library
 Name:          xapian-core
-Version:       1.4.11
+Version:       1.4.12
 Release:       1
 License:       GPL
 Vendor:        xapian.org
