@@ -2,7 +2,7 @@
 
 Summary:       The Xapian Probabilistic Information Retrieval Library
 Name:          xapian-core
-Version:       1.4.13
+Version:       1.4.14
 Release:       1
 License:       GPL
 Vendor:        xapian.org
@@ -11,6 +11,7 @@ URL:           https://xapian.org
 Requires:      %{name}-libs = %{version}
 BuildRequires: gcc-c++ zlib-devel libuuid-devel
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Source:        http://www.oligarchy.co.uk/xapian/%{version}/%{name}-%{version}.tar.xz
 
 %description
 Xapian is an Open Source Probabilistic Information Retrieval Library. It
@@ -39,19 +40,15 @@ indexing and search facilities to applications. This package provides the
 files needed for building packages which use Xapian.
 
 %prep
-wget http://www.oligarchy.co.uk/xapian/%{version}/%{name}-%{version}.tar.xz
-xz -d %{name}-%{version}.tar.xz
-tar xf %{name}-%{version}.tar
+%setup -q -n %{name}-%{version}
 
 %build
-cd %{name}-%{version}
 %configure
 make
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 mkdir -p %{buildroot}
-cd %{name}-%{version}
 make DESTDIR=%{buildroot} install
 mv %{buildroot}%{_datadir}/doc/%{name} %{buildroot}%{_datadir}/doc/%{name}-devel-%{version}
 cp HACKING %{buildroot}%{_datadir}/doc/%{name}-devel-%{version}
@@ -116,6 +113,9 @@ cp AUTHORS ChangeLog ChangeLog.examples COPYING NEWS PLATFORMS README %{buildroo
 %{_mandir}/man1/xapian-config.1*
 
 %changelog
+* Tue Jan 6 2020 Jamie Curnow <jc@jc21.com> - 1.4.14-1
+- v1.4.14
+
 * Thu Oct 17 2019 Jamie Curnow <jc@jc21.com> - 1.4.13-1
 - v1.4.13
 
