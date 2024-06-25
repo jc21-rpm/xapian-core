@@ -2,8 +2,8 @@
 
 Summary:       The Xapian Probabilistic Information Retrieval Library
 Name:          xapian-core
-Version:       1.4.18
-Release:       1
+Version:       1.4.25
+Release:       1%{?dist}
 License:       GPL
 Vendor:        xapian.org
 Group:         Applications/Databases
@@ -113,6 +113,9 @@ cp AUTHORS ChangeLog ChangeLog.examples COPYING NEWS PLATFORMS README %{buildroo
 %{_mandir}/man1/xapian-config.1*
 
 %changelog
+* Tue Jun 25 2024 Jamie Curnow <jc@jc21.com> - 1.4.25-1
+- v1.4.25
+
 * Mon Feb 1 2021 Jamie Curnow <jc@jc21.com> - 1.4.18-1
 - v1.4.18
 
