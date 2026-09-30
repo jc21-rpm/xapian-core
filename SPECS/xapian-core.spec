@@ -50,6 +50,7 @@ make
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 mkdir -p %{buildroot}
 make DESTDIR=%{buildroot} install
+rm -f %{buildroot}%{_libdir}/*.la
 mv %{buildroot}%{_datadir}/doc/%{name} %{buildroot}%{_datadir}/doc/%{name}-devel-%{version}
 cp HACKING %{buildroot}%{_datadir}/doc/%{name}-devel-%{version}
 mkdir -p %{buildroot}%{_datadir}/doc/%{name}-%{version}
@@ -103,8 +104,6 @@ cp AUTHORS ChangeLog ChangeLog.examples COPYING NEWS PLATFORMS README %{buildroo
 %{_includedir}/xapian
 %{_includedir}/xapian.h
 %{_libdir}/libxapian*.so
-#%{_libdir}/libxapian*.a
-%{_libdir}/libxapian*.la
 %{_libdir}/cmake/xapian
 %{_libdir}/pkgconfig/xapian*.pc
 %{_datadir}/aclocal/xapian*.m4
